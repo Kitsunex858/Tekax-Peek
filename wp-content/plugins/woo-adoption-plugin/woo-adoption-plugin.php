@@ -40,6 +40,17 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
     add_action( 'woocommerce_product_options_general_product_data', 'add_dog_custom_fields' );
     function add_dog_custom_fields() {
         echo '<div class="options_group">';
+	woocommerce_wp_text_input(
+	    array(
+		'id'	      => '_dog_sex',
+		'wrapper_class'	=> 'show_if_dog',
+		'label'	      => __('Sexo del perro', 'woocommence' ),
+		'placeholder' => '',
+		'desc_tip'    => 'true',
+		'description' => __( 'Intruduce el sexo del perro.', 'woocommerce' )
+	    )
+	);
+
 
         woocommerce_wp_text_input( 
             array( 
