@@ -6,10 +6,14 @@
 # Note: if you want to stage/commit WP core files
 # you can delete this whole section/until Configuration.
 /wp-admin/
+/wp-content/backups/
+/wp-content/cache/
 /wp-content/index.php
 /wp-content/languages
 /wp-content/plugins/index.php
 /wp-content/themes/index.php
+/wp-content/updraft/
+/wp-content/upgrade/
 /wp-includes/
 /index.php
 /license.txt
@@ -20,29 +24,39 @@
 # Configuration
 wp-config.php
 
-# Example themes
-/wp-content/themes/twenty*/
-
-# Example plugin
-/wp-content/plugins/hello.php
-
 # Uploads
 /wp-content/uploads/
+
+# Backups
+/wp-content/backup-migration*/*
 
 # Log files
 *.log
 
 # htaccess
 /.htaccess
+/.htaccess.*
 
 # All plugins
 #
+/wp-content/maintenance/
+/*/maintenance.php
+
+/*/mu-plugins/
+/*/jetpack-waf/
+/*/advanced-cache.php
+/*/backup-migration-config.php
+/*/wp-cache-config.php
+
 # Note: If you wish to whitelist plugins,
 # uncomment the next line
-#/wp-content/plugins
+/wp-content/plugins/*
+!/wp-content/plugins/woo-adoption-plugin/
 
 # All themes
 #
 # Note: If you wish to whitelist themes,
 # uncomment the next line
-#/wp-content/themes
+
+/wp-content/themes/*
+!/wp-content/themes/hostgator-us-asilo-tekax-peek/
