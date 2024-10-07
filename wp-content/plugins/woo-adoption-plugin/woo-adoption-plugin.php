@@ -40,16 +40,21 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
     add_action( 'woocommerce_product_options_general_product_data', 'add_dog_custom_fields' );
     function add_dog_custom_fields() {
         echo '<div class="options_group">';
-	woocommerce_wp_text_input(
-	    array(
-		'id'	      => '_dog_sex',
-		'wrapper_class'	=> 'show_if_dog',
-		'label'	      => __('Sexo del perro', 'woocommence' ),
-		'placeholder' => '',
-		'desc_tip'    => 'true',
-		'description' => __( 'Intruduce el sexo del perro.', 'woocommerce' )
-	    )
-	);
+
+        woocommerce_wp_select(
+            array(
+                'id'          => '_dog_sex',
+                'wrapper_class' => 'show_if_dog',
+                'label'       => __('Sexo del perro', 'woocommerce' ),
+                'options'     => array(
+                    ''              => __( 'Selecciona el sexo', 'woocommerce' ),
+                    'male'         => __( 'Macho', 'woocommerce' ),
+                    'female'       => __( 'Hembra', 'woocommerce' ),
+                ),
+                'desc_tip'    => 'true',
+                'description' => __( 'Selecciona el sexo del perro.', 'woocommerce' )
+            )
+        );
 
 
         woocommerce_wp_text_input( 
@@ -134,6 +139,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
     add_action( 'woocommerce_process_product_meta', 'save_dog_custom_fields' );
     function save_dog_custom_fields( $post_id ) {
         $fields = [
+            '_dog_sex',
             '_dog_age', 
             '_dog_breed', 
             '_dog_size', 
@@ -159,6 +165,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
         global $post;
 
         $fields = [
+            '_dog_sex'       => __( 'Sexo', 'woocommerce' ),
             '_dog_age'       => __( 'Edad', 'woocommerce' ),
             '_dog_breed'     => __( 'Raza', 'woocommerce' ),
             '_dog_size'      => __( 'Tamaño', 'woocommerce' ),
