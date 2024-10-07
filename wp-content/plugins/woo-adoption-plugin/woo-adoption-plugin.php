@@ -47,7 +47,6 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
                 'wrapper_class' => 'show_if_dog',
                 'label'       => __('Sexo del perro', 'woocommerce' ),
                 'options'     => array(
-                    ''              => __( 'Selecciona el sexo', 'woocommerce' ),
                     'male'         => __( 'Macho', 'woocommerce' ),
                     'female'       => __( 'Hembra', 'woocommerce' ),
                 ),
