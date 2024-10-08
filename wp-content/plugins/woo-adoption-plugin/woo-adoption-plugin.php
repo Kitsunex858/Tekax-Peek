@@ -12,8 +12,8 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
     add_action( 'init', 'register_dog_product_type' );
     function register_dog_product_type() {
         class WC_Product_Dog extends WC_Product {
+            public $product_type = 'dog';
             public function __construct( $product ) {
-                $this->product_type = 'dog';
                 parent::__construct( $product );
             }
         }
